@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/bufferstreamer/grpc-demo/pb";
+
+// 一个用户消息
+message User {
+  int64  id    = 1;
+  string name  = 2;
+  string email = 3;
+  int32  age   = 4;
+}
+
+// 请求：只带一个用户 id
+message GetUserRequest {
+  int64 id = 1;
+}
+
+// 响应：包含一个用户
+message GetUserResponse {
+  User user = 1;
+}
+
+// 服务定义：一个方法 GetUser
+service UserService {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}

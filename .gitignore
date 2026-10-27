@@ -1,0 +1,10 @@
+# 编译产物
+server_bin
+client_bin
+
+# Go
+*.test
+*.out
+
+# 系统
+.DS_Store
